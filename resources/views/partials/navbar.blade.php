@@ -20,6 +20,8 @@
         <a href="{{route('welcome')}}" class="hover:underline text-black text-2xl">Home</a>
         <a href="{{route('cart')}}" class="hover:underline text-black text-2xl">{{__('Cart')}}</a>
         <a href="{{route('profile')}}" class="hover:underline text-black text-2xl">{{__('Profile')}}</a>
-        <a href="{{route('maintanance')}}" class="hover:underline text-black text-2xl">{{__('Account Maintanance')}}</a>
+        @can('admin')
+            <a href="{{route('maintanance')}}" class="hover:underline text-black text-2xl">{{__('Account Maintanance')}}</a>
+        @endcan
     </div>
 @endauth
